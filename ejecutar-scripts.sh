@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Recibir tiempo arg[0]
+TIME=$1
+
 # Nombre de la sesión
 SESSION_NAME="mi_sesion"
 
@@ -14,16 +17,16 @@ tmux split-window -v
 
 # Seleccionar y ejecutar el script en cada panel
 tmux select-pane -t 0
-tmux send-keys 'bash /home/utnso/Desktop/ejecutar-tp/filesystem.sh' C-m
+tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/filesystem.sh $TIME" C-m
 
 tmux select-pane -t 1
-tmux send-keys 'bash /home/utnso/Desktop/ejecutar-tp/memoria.sh' C-m
+tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/memoria.sh $TIME" C-m
 
 tmux select-pane -t 2
-tmux send-keys 'bash /home/utnso/Desktop/ejecutar-tp/cpu.sh' C-m
+tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/cpu.sh $TIME" C-m
 
 tmux select-pane -t 3
-tmux send-keys 'bash /home/utnso/Desktop/ejecutar-tp/kernel.sh' C-m
+tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/kernel.sh $TIME" C-m
 
 # Adjuntarse a la sesión
 tmux attach -t $SESSION_NAME
