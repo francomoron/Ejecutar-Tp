@@ -28,7 +28,7 @@ tmux select-pane -t 2
 tmux send-keys "bash ./cpu.sh $DIR $TIME" C-m
 
 tmux select-pane -t 3
-tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/kernel.sh $DIR $TIME $ARCHIVO_A_EJECUTAR" C-m
+tmux send-keys "bash ./kernel.sh $DIR $TIME $ARCHIVO_A_EJECUTAR" C-m
 
 # Adjuntarse a la sesión
 tmux attach -t $SESSION_NAME
