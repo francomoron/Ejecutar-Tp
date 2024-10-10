@@ -1,6 +1,7 @@
 #!/bin/bash
 
-TIME=$1
+DIR=$1
+TIME=$2
 
 if [ -z "$TIME" ]; then
     TIME=0
@@ -15,7 +16,7 @@ echo "-------------------"
 echo "MODULO FILESYSTEM"
 echo "-------------------"
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/filesystem
+cd $DIR/filesystem
 make
 
 echo "--------------------"

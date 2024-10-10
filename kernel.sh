@@ -1,7 +1,8 @@
 #!/bin/bash
 
-TIME=$1
-
+DIR=$1
+TIME=$2
+ARCHIVO_A_EJECUTAR=$3
 if [ -z "$TIME" ]; then
     TIME=0
 fi
@@ -38,7 +39,7 @@ echo "-------------------"
 
 sleep $TIME
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/kernel
+cd $DIR/kernel
 make
 
 # Elimino el archivo de bloqueo
@@ -51,4 +52,4 @@ echo "----------------------"
 echo "EJECUTANDO KERNEL"
 echo "----------------------"
 
-./bin/kernel
+./bin/kernel $ARCHIVO_A_EJECUTAR

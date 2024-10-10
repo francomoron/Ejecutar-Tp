@@ -1,6 +1,7 @@
 #!/bin/bash
 
-TIME=$1
+DIR=$1
+TIME=$2
 
 if [ -z "$TIME" ]; then
     TIME=0
@@ -24,7 +25,7 @@ echo "-------------------"
 
 sleep $TIME
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/memoria
+cd $DIR/memoria
 make
 
 echo "--------------------"

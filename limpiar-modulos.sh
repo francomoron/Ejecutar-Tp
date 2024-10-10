@@ -1,21 +1,23 @@
 #!/bin/bash
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/filesystem 
+DIR=$1
+
+cd $DIR/filesystem 
 make clean
 rm -f filesystem.log
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/memoria
+cd $DIR/memoria
 make clean
 rm -f memoria.log
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/cpu
+cd $DIR/cpu
 make clean
 rm -f cpu.log
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/kernel
+cd $DIR/kernel
 make clean
 rm -f kernel.log
 
-cd /home/utnso/Desktop/tp-2024-2c-ElDebug/utils
+cd $DIR/utils
 make clean
 rm -dr obj
