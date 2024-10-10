@@ -19,13 +19,13 @@ tmux split-window -v
 
 # Seleccionar y ejecutar el script en cada panel
 tmux select-pane -t 0
-tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/filesystem.sh $DIR $TIME" C-m
+tmux send-keys "bash ./filesystem.sh $DIR $TIME" C-m
 
 tmux select-pane -t 1
-tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/memoria.sh $DIR $TIME" C-m
+tmux send-keys "bash ./memoria.sh $DIR $TIME" C-m
 
 tmux select-pane -t 2
-tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/cpu.sh $DIR $TIME" C-m
+tmux send-keys "bash ./cpu.sh $DIR $TIME" C-m
 
 tmux select-pane -t 3
 tmux send-keys "bash /home/utnso/Desktop/ejecutar-tp/kernel.sh $DIR $TIME $ARCHIVO_A_EJECUTAR" C-m
