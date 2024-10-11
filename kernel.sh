@@ -3,6 +3,8 @@
 DIR=$1
 TIME=$2
 ARCHIVO_A_EJECUTAR=$3
+TAMANIO_ARCHIVO=$4
+
 if [ -z "$TIME" ]; then
     TIME=0
 fi
@@ -52,4 +54,4 @@ echo "----------------------"
 echo "EJECUTANDO KERNEL"
 echo "----------------------"
 
-./bin/kernel $ARCHIVO_A_EJECUTAR
+./bin/kernel $ARCHIVO_A_EJECUTAR $TAMANIO_ARCHIVO

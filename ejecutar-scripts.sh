@@ -4,6 +4,7 @@
 DIR=$1
 TIME=$2
 ARCHIVO_A_EJECUTAR=$3
+TAMANIO_ARCHIVO=$4
 
 # Nombre de la sesión
 SESSION_NAME="mi_sesion"
@@ -28,7 +29,7 @@ tmux select-pane -t 2
 tmux send-keys "bash ./cpu.sh $DIR $TIME" C-m
 
 tmux select-pane -t 3
-tmux send-keys "bash ./kernel.sh $DIR $TIME $ARCHIVO_A_EJECUTAR" C-m
+tmux send-keys "bash ./kernel.sh $DIR $TIME $ARCHIVO_A_EJECUTAR $TAMANIO_ARCHIVO" C-m
 
 # Adjuntarse a la sesión
 tmux attach -t $SESSION_NAME
