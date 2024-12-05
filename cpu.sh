@@ -2,6 +2,7 @@
 
 DIR=$1
 TIME=$2
+DEBUG=$3
 
 if [ -z "$TIME" ]; then
     TIME=0
@@ -48,4 +49,9 @@ echo "----------------------"
 # Elimino el archivo de bloqueo
 rm -f /tmp/cpu.lock
 
-./bin/cpu
+if [[ "${DEBUG}" == "true" ]]; then
+	valgrind ./bin/cpu
+else
+	./bin/cpu
+fi
+
