@@ -56,7 +56,7 @@ echo "EJECUTANDO KERNEL"
 echo "----------------------"
 
 if [[ "${DEBUG}" == "true" ]]; then
-	valgrind ./bin/kernel $ARCHIVO_A_EJECUTAR $TAMANIO_ARCHIVO
+	valgrind --leak-check=full --track-origins=yes --log-file=valgrind-kernel.log ./bin/kernel $ARCHIVO_A_EJECUTAR $TAMANIO_ARCHIVO
 else
 	./bin/kernel $ARCHIVO_A_EJECUTAR $TAMANIO_ARCHIVO
 fi

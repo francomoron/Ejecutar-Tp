@@ -41,7 +41,7 @@ echo "----------------------"
 rm -f /tmp/memoria.lock
 
 if [[ "${DEBUG}" == "true" ]]; then
-	valgrind ./bin/memoria
+	valgrind --leak-check=full --track-origins=yes --log-file=valgrind-memoria.log ./bin/memoria
 else
 	./bin/memoria
 fi

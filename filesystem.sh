@@ -34,7 +34,7 @@ echo "----------------------"
 rm -f /tmp/filesystem.lock
 
 if [[ "${DEBUG}"  == "true" ]]; then
-	valgrind ./bin/filesystem
+	valgrind --leak-check=full --track-origins=yes --log-file=valgrind-filesystem.log ./bin/filesystem
 else
 	./bin/filesystem
 fi

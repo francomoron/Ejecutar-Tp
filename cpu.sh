@@ -50,7 +50,7 @@ echo "----------------------"
 rm -f /tmp/cpu.lock
 
 if [[ "${DEBUG}" == "true" ]]; then
-	valgrind ./bin/cpu
+	valgrind --leak-check=full --track-origins=yes --log-file=valgrind-cpu.log ./bin/cpu
 else
 	./bin/cpu
 fi
